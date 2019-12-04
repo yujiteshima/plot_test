@@ -26,16 +26,13 @@ func plotPointsSepal(x string) plotter.XYs {
 	for i := range pts {
 		line, err = reader.Read()
 		if err != nil {
-			//break
 			panic(err)
 		}
 		if line[4] == x {
-			//fmt.Println(line[0])
 			pts[i].X, _ = strconv.ParseFloat(line[0], 64)
 			pts[i].Y, _ = strconv.ParseFloat(line[1], 64)
 		}
 	}
-	//fmt.Println(pts)
 	return pts
 }
 
@@ -48,8 +45,8 @@ func PlotSepal() {
 	}
 	//label
 	p.Title.Text = "Sepal"
-	p.X.Label.Text = "sepal.length"
-	p.Y.Label.Text = "sepal.width"
+	p.X.Label.Text = "length"
+	p.Y.Label.Text = "width"
 	// 補助線
 	p.Add(plotter.NewGrid())
 
@@ -57,15 +54,11 @@ func PlotSepal() {
 	x2 := "Versicolor"
 	x3 := "Virginica"
 
-	//各クラスのサンプル
-	//n := 50
-
 	// 散布図の作成
 	plot1, err := plotter.NewScatter(plotPointsSepal(x1))
 	if err != nil {
 		panic(err)
 	}
-	//fmt.Println(plot1)
 
 	plot2, err := plotter.NewScatter(plotPointsSepal(x2))
 	if err != nil {

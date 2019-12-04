@@ -6,6 +6,5 @@ import (
 
 func main() {
 	plot.PlotSepal()
-
 	plot.PlotPetal()
 }

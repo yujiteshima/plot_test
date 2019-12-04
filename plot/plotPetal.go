@@ -47,9 +47,9 @@ func PlotPetal() {
 		panic(err)
 	}
 	//label
-	p.Title.Text = "Sepal"
-	p.X.Label.Text = "sepal.length"
-	p.Y.Label.Text = "sepal.width"
+	p.Title.Text = "Petal"
+	p.X.Label.Text = "length"
+	p.Y.Label.Text = "width"
 	// 補助線
 	p.Add(plotter.NewGrid())
 
